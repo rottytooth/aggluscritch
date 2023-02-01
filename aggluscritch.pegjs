@@ -3,7 +3,7 @@ Word = t:ThereIsA+
 	return t.join(";\n") + ";";
 }
    
-ThereIsA = ('S'/'s') 'cri' d:(SingleType / ListType) c:Command? _?
+ThereIsA = ('Sc'/'sc'/'Th'/'th'/'T'/'t') 'ri' d:(SingleType / ListType) c:Command? _?
 {
 	if (!c)
     	return d;
