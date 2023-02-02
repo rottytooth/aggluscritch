@@ -42,10 +42,21 @@ Three = "eer" { return 3; }
 Four = "eet" { return 4; }
 Five = "een" { return 5; }
 
-Command = "tu" p:Print
+Command = "tu" p:(Print/Assign)
 {
 	return p;
 }
+
+Assign = "bu" _ Identifier 
+{
+	return "assign";
+}
+
+Identifier = Consonant Vowel Consonant?
+
+Consonant = ("th"/"t"/"g"/"h"/"sh"/"y"/"z"/"x"/"w"/"v"/"j"/"dz") 
+
+Vowel = ("a"/"e"/"i"/"o"/"u")
 
 Print = "li" 
 {
